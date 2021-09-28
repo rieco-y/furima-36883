@@ -42,23 +42,28 @@
 
 ## shopping_lists テーブル
 
-| Column              | Type       | Options                        |
-| ------------------- | ---------- | ------------------------------ |
-| user_id             | references | null: false, foreign_key: true |
-| item_id             | references | null: false, foreign_key: true |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| item             | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :shopping_address
+- belongs_to :address_list
 
-## shopping_address テーブル
+## address_lists テーブル
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
-| address           | string     | null: false                    |
-| shopping_lists_id | references | null: false, foreign_key: true |
+| post_num          | integer    | null: false                    |
+| todouhuken        | string     | null: false                    |
+| city              | string     | null: false                    |
+| house_num         | integer    | null: false                    |
+| building_name     | string     | null: false                    |
+| tel_num           | integer    | null: false                    |
+| shopping_lists    | references | null: false, foreign_key: true |
 
 ### Association
 
