@@ -26,7 +26,7 @@
 | item_name          | string     | null: false                    |
 | item_text          | text       | null: false                    |
 | price              | string     | null: false                    |
-| user_id            | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 | category_id        | string     | null: false                    |
 | condition_id       | string     | null: false                    |
 | delivery_cost_id   | string     | null: false                    |
@@ -74,8 +74,8 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | comment_text | string     | null: false                    |
-| user_id      | references | null: false, foreign_key: true |
-| item_id      | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
 
 ### Association
 
