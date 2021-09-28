@@ -63,7 +63,7 @@
 | house_num         | string     | null: false                    |
 | building_name     | string     |                                |
 | tel_num           | string     | null: false                    |
-| shopping_lists    | references | null: false, foreign_key: true |
+| shopping_list     | references | null: false, foreign_key: true |
 
 ### Association
 
