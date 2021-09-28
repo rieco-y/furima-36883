@@ -58,7 +58,7 @@
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
 | post_num          | string     | null: false                    |
-| todouhuken        | string     | null: false                    |
+| todouhuken_id     | string     | null: false                    |
 | city              | string     | null: false                    |
 | house_num         | integer    | null: false                    |
 | building_name     | string     | null: false                    |
