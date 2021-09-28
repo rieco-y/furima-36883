@@ -58,10 +58,10 @@
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
 | post_num          | string     | null: false                    |
-| todouhuken_id     | string     | null: false                    |
+| todouhuken_id     | integer    | null: false                    |
 | city              | string     | null: false                    |
-| house_num         | integer    | null: false                    |
-| building_name     | string     | null: false                    |
+| house_num         | string     | null: false                    |
+| building_name     | string     |                                |
 | tel_num           | integer    | null: false                    |
 | shopping_lists    | references | null: false, foreign_key: true |
 
