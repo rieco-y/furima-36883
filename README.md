@@ -25,7 +25,7 @@
 | ------------------ | ---------- | ------------------------------ |
 | item_name          | string     | null: false                    |
 | item_text          | text       | null: false                    |
-| price              | string     | null: false                    |
+| price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | category_id        | string     | null: false                    |
 | condition_id       | string     | null: false                    |
