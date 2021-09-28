@@ -1,24 +1,83 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| last_name          | string  | null: false               |
+| last_name_kana     | string  | null: false               |
+| first_name         | string  | null: false               |
+| first_name_kana    | string  | null: false               |
+| birth_date         | date    | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_many :shopping_lists
+- has_many :comments
 
-* Configuration
+## items テーブル
 
-* Database creation
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| item_name          | string     | null: false                    |
+| item_text          | text       | null: false                    |
+| price              | integer    | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| category_id        | string     | null: false                    |
+| condition_id       | string     | null: false                    |
+| delivery_cost_id   | string     | null: false                    |
+| todouhuken_id      | string     | null: false                    |
+| send_schedule_id   | string     | null: false                    |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_one :shopping_list
+- belongs_to :user
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## shopping_lists テーブル
 
-* ...
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| item             | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :address_list
+
+## address_lists テーブル
+
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| post_num          | string     | null: false                    |
+| todouhuken_id     | integer    | null: false                    |
+| city              | string     | null: false                    |
+| house_num         | string     | null: false                    |
+| building_name     | string     |                                |
+| tel_num           | string     | null: false                    |
+| shopping_list     | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :shopping_list
+
+## comments テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| comment_text | string     | null: false                    |
+| user         | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
