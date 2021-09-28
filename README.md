@@ -27,11 +27,11 @@
 | item_text          | text       | null: false                    |
 | price              | string     | null: false                    |
 | user_id            | references | null: false, foreign_key: true |
-| genre              | string     | null: false                    |
-| condition          | string     | null: false                    |
-| delivery_cost      | string     | null: false                    |
-| send_area          | string     | null: false                    |
-| send_schedule      | string     | null: false                    |
+| category_id        | string     | null: false                    |
+| condition_id       | string     | null: false                    |
+| delivery_cost_id   | string     | null: false                    |
+| send_area_id       | string     | null: false                    |
+| send_schedule_id   | string     | null: false                    |
 
 ### Association
 
