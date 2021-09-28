@@ -30,6 +30,7 @@
 | genre              | string     | null: false                    |
 | condition          | string     | null: false                    |
 | delivery_cost      | string     | null: false                    |
+| send_area          | string     | null: false                    |
 | send_schedule      | string     | null: false                    |
 
 ### Association
