@@ -30,7 +30,7 @@
 | category_id        | string     | null: false                    |
 | condition_id       | string     | null: false                    |
 | delivery_cost_id   | string     | null: false                    |
-| send_area_id       | string     | null: false                    |
+| todouhuken_id      | string     | null: false                    |
 | send_schedule_id   | string     | null: false                    |
 
 ### Association

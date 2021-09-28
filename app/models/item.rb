@@ -3,6 +3,6 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :condition
   belongs_to :delivery_cost
-  belongs_to :send_area
+  belongs_to :todouhuken
   belongs_to :send_schedule
 end

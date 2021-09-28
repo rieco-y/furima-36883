@@ -18,9 +18,10 @@ class todouhuken < ActiveHash::Base
     { id: 46, name: '宮崎県' }, { id: 47, name: '鹿児島県' }, { id: 48, name: '沖縄県' }
   ]
 
- # include ActiveHash::Associations
- # has_many :address_lists
-  
+  include ActiveHash::Associations
+  has_many :items
+  # has_many :address_lists
+
   end
 
   #  address_listモデル作成後、マイグレーションに追加、実行⇨  t.integer    :todouhuken_id     , null: false
