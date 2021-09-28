@@ -51,7 +51,7 @@
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :address_list
+- has_one :address_list
 
 ## address_lists テーブル
 
@@ -62,12 +62,12 @@
 | city              | string     | null: false                    |
 | house_num         | string     | null: false                    |
 | building_name     | string     |                                |
-| tel_num           | integer    | null: false                    |
+| tel_num           | string     | null: false                    |
 | shopping_lists    | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_many :shopping_lists
+- belongs_to :shopping_list
 
 ## comments テーブル
 
