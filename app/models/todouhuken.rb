@@ -1,4 +1,4 @@
-class todouhuken < ActiveHash::Base
+class Todouhuken < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' }, { id: 2, name: '北海道' }, { id: 3, name: '青森県' },
     { id: 4, name: '岩手県' }, { id: 5, name: '宮城県' }, { id: 6, name: '秋田県' }, 
@@ -22,6 +22,6 @@ class todouhuken < ActiveHash::Base
   has_many :items
   # has_many :address_lists
 
-  end
+end
 
   #  address_listモデル作成後、マイグレーションに追加、実行⇨  t.integer    :todouhuken_id     , null: false
