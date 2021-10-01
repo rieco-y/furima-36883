@@ -16,6 +16,6 @@ class Item < ApplicationRecord
   belongs_to :delivery_cost
   belongs_to :todouhuken
   belongs_to :send_schedule
-  has_one attached :image
+  has_one_attached :image
 
 end
