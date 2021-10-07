@@ -19,4 +19,5 @@ class Item < ApplicationRecord
   belongs_to :todouhuken
   belongs_to :send_schedule
   has_one_attached :image
+  has_many :shopping_lists
 end
