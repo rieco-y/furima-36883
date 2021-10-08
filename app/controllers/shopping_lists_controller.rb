@@ -6,6 +6,7 @@ class ShoppingListsController < ApplicationController
   end
 
   def create
+    binding.pry
     @item = Item.find(params[:item_id])
     @shopping_list_address_list = ShoppingListAddressList.new(shopping_list_params)
     if @shopping_list_address_list.valid?
@@ -20,7 +21,7 @@ class ShoppingListsController < ApplicationController
   private
 
   def shopping_list_params
-    params.permit(:hoge, :user_id, :item_id, :post_num, :todouhuken_id, :city, :house_num, :building_name, :tel_num, :shopping_list_id).merge(user_id: current_user.id)
+    params.permit(:user_id, :item_id, :post_num, :todouhuken_id, :city, :house_num, :building_name, :tel_num, :shopping_list_id, :token).merge(user_id: current_user.id)
   end
-
+  
 end
