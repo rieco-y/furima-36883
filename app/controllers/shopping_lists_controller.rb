@@ -6,7 +6,6 @@ class ShoppingListsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.find(params[:item_id])
     @shopping_list_address_list = ShoppingListAddressList.new(shopping_list_params)
     if @shopping_list_address_list.valid?
