@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   end
 
   def contributor_confirmation
-    redirect_to root_path unless current_user == @item.user
+    redirect_to root_path unless current_user == @item.user && @item.shopping_list.blank?
   end
   
 end
