@@ -1,11 +1,14 @@
 class ShoppingListsController < ApplicationController
+  before_action :set_item
+  before_action :sold_out
+  before_action :authenticate_user!
+
+
   def index
     @shopping_list_address_list = ShoppingListAddressList.new
-    @item = Item.find(params[:item_id])
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @shopping_list_address_list = ShoppingListAddressList.new(shopping_list_params)
     if @shopping_list_address_list.valid?
       pay_item
@@ -33,4 +36,15 @@ class ShoppingListsController < ApplicationController
       currency: 'jpy'
     )
   end
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+
+  def sold_out
+    unless current_user != @item.user && @item.shopping_list.blank?
+      redirect_to root_path
+    end 
+  end
+  
 end
