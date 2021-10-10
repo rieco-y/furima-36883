@@ -18,7 +18,7 @@ RSpec.describe ShoppingListAddressList, type: :model do
     end
 
     context '内容に問題がある場合' do
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @shopping_list_address_list.token = nil
         @shopping_list_address_list.valid?
         expect(@shopping_list_address_list.errors.full_messages).to include("Token can't be blank")
@@ -31,12 +31,12 @@ RSpec.describe ShoppingListAddressList, type: :model do
       it '郵便番号が半角のハイフンを含んだ正しい形式でないと保存できないこと' do
         @shopping_list_address_list.post_num = '1234567'
         @shopping_list_address_list.valid?
-        expect(@shopping_list_address_list.errors.full_messages).to include("Post num is invalid. Include hyphen(-)")
+        expect(@shopping_list_address_list.errors.full_messages).to include('Post num is invalid. Include hyphen(-)')
       end
       it '都道府県を選択していないと保存できないこと' do
         @shopping_list_address_list.todouhuken_id = '1'
         @shopping_list_address_list.valid?
-        expect(@shopping_list_address_list.errors.full_messages).to include("Todouhuken Please select one")
+        expect(@shopping_list_address_list.errors.full_messages).to include('Todouhuken Please select one')
       end
       it '市区町村が空だと保存できないこと' do
         @shopping_list_address_list.city = ''
@@ -56,20 +56,18 @@ RSpec.describe ShoppingListAddressList, type: :model do
       it '電話番号は、9桁未満だと保存できないこと' do
         @shopping_list_address_list.tel_num = '123456789'
         @shopping_list_address_list.valid?
-        expect(@shopping_list_address_list.errors.full_messages).to include("Tel num is invalid")
+        expect(@shopping_list_address_list.errors.full_messages).to include('Tel num is invalid')
       end
       it '電話番号は、12桁以上だと保存できないこと' do
         @shopping_list_address_list.tel_num = '123456789012'
         @shopping_list_address_list.valid?
-        expect(@shopping_list_address_list.errors.full_messages).to include("Tel num is invalid")
+        expect(@shopping_list_address_list.errors.full_messages).to include('Tel num is invalid')
       end
       it '電話番号は、全角数値だと保存できないこと' do
         @shopping_list_address_list.tel_num = '０９０１２３４５６７８'
         @shopping_list_address_list.valid?
-        expect(@shopping_list_address_list.errors.full_messages).to include("Tel num is invalid")
+        expect(@shopping_list_address_list.errors.full_messages).to include('Tel num is invalid')
       end
     end
   end
 end
-
-
