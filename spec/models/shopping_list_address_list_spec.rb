@@ -68,6 +68,17 @@ RSpec.describe ShoppingListAddressList, type: :model do
         @shopping_list_address_list.valid?
         expect(@shopping_list_address_list.errors.full_messages).to include('Tel num is invalid')
       end
+      it 'userが紐付いていないと保存できないこと' do
+        @shopping_list_address_list.user_id = nil
+        @shopping_list_address_list.valid?
+        expect(@shopping_list_address_list.errors.full_messages).to include("User can't be blank")
+      end
+      it 'itemが紐付いていないと保存できないこと' do
+        @shopping_list_address_list.item_id = nil
+        @shopping_list_address_list.valid?
+        expect(@shopping_list_address_list.errors.full_messages).to include("Item can't be blank")
+      end
+
     end
   end
 end
