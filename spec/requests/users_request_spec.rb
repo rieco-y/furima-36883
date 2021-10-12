@@ -22,11 +22,6 @@ RSpec.describe "Users", type: :request do
       get edit_user_path(@user)
       expect(response.body).to include("新しいメールアドレス")
     end
-    it 'editアクションにリクエストするとレスポンスに新しいパスワードの入力フォームが存在する' do 
-      @user.save
-      get edit_user_path(@user)
-      expect(response.body).to include("新しいパスワード")
-    end
   end 
 
 
